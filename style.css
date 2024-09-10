@@ -1,0 +1,169 @@
+*,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    background-color: rgb(228, 228, 228);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+    width: 100dvw;
+}
+
+.payment {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 32px;
+    gap: 32px;
+    border-radius: 8px;
+}
+
+.form-container {
+    width: 50vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.payment header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.payment header h2 {
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+
+.payment header i {
+    cursor: pointer;
+}
+
+.input-container input {
+    width: 100%;
+    padding: 16px;
+    border: 1px solid #A1a1a1;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+}
+
+.input-container:nth-child(3) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.form-container button {
+    background-color: #2f2fd8;
+    color: white;
+    border: none;
+    padding: 16px 0;
+    font-size: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+.form-container button:hover {
+    background-color: #25259b;
+}
+
+.card-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15rem;
+    width: 23rem;
+    position: relative;
+    perspective: 1000px;
+}
+
+.card-front,
+.card-back {
+    display: flex;
+    gap: 32px;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: transform .6s;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    border-radius: 8px;
+}
+
+.card-front {
+    background-image: url(./assets/blob.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: 120px;
+    background-position-y: 50%;
+    padding: 32px;
+}
+
+.card-icon {
+    display: flex;
+    gap: 16px;
+}
+
+.card-icon .credito {
+    font-size: 16px;
+}
+
+.card-icon i {
+    font-size: 20px;
+}
+
+.card-number {
+    font-size: 18px;
+
+}
+
+.card-nameDate {
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+    font-size: 16px;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+.card-back .stripe {
+    background-color: black;
+    height: 40px;
+}
+
+.card-container.flip .card-front {
+    transform: rotateY(180deg);
+}
+
+.card-container.flip .card-back {
+    transform: rotateY(360deg);
+}
+
+.card-back #displayCardCvv {
+    padding: 0 32px;
+}
